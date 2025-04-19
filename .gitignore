@@ -1,0 +1,8 @@
+.mypy_cache
+env
+dist
+*.egg-info
+build
+
+.pytest_cache
+**/__pycache__
