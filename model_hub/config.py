@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field
-from typing import Optional, List, TypedDict
+from typing import List, Optional, Tuple, TypedDict
+
 
 @dataclass
 class ModelConfig:
@@ -8,7 +9,7 @@ class ModelConfig:
     max_response_tokens: int = 4096
     temperature: float = 0.5
 
-class ProviderConfigs(TypedDict, total = False):
-    openai: Optional[ModelConfig] = None
-    gemini: Optional[ModelConfig] = None
-    
+
+class ProviderConfigs(TypedDict, total=False):
+    openai: Optional[ModelConfig]
+    gemini: Optional[ModelConfig]

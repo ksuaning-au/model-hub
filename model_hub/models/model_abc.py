@@ -1,24 +1,27 @@
-from abc import ABC, abstractmethod
 import enum
+from abc import ABC, abstractmethod
+from typing import List
+
+from model_hub.config import ModelConfig
+
 
 class ModelName(enum.Enum):
     OPENAI = "openai"
     GEMINI = "gemini"
-    
+
 
 class ModelProviderABC(ABC):
+    def __init__(self, config: ModelConfig):
+        self._config = config
+
     @abstractmethod
-    def get_name() -> ModelName:
-        raise NotImplemented("Model Provider Get Name Not Implemented")
-    
+    def get_name(self) -> ModelName: ...
+
     @abstractmethod
-    def request(prompt: str, model: str, temperature: float, max_tokens: int):
-        raise NotImplemented("Model Provider Request Not Implemented")
-    
+    def request(self, prompt: str, model: str) -> str: ...
+
     @abstractmethod
-    def get_all_models():
-        raise NotImplemented("Model Provider Get All Models Not Implemented")
-    
+    def get_all_models(self) -> List[str]: ...
+
     @abstractmethod
-    def get_supported_models():
-        raise NotImplemented("Model Provider Get Supported Not Implemented")
+    def get_supported_models(self) -> List[str]: ...

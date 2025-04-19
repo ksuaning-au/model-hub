@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import MagicMock, patch
 from typing import List, Optional
-from model_hub.main import Prompter
+from model_hub.prompter import Prompter
 from model_hub.config import ModelConfig, ProviderConfigs
 from model_hub.models.model_abc import ModelName, ModelProviderABC
 
@@ -34,7 +34,7 @@ class TestPrompter(unittest.TestCase):
         
         # Set up provider map patch
         self.provider_map_patch = patch.dict(
-            'model_hub.main.Prompter._provider_map', 
+            'model_hub.prompter.Prompter._provider_map', 
             {
                 ModelName.GEMINI.value: lambda config: self.mock_gemini_provider,
                 ModelName.OPENAI.value: lambda config: self.mock_openai_provider
