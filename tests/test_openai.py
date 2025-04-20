@@ -48,7 +48,7 @@ class TestOpenAI(unittest.TestCase):
     
     def test_get_name(self):
         """Test get_name returns the correct model name."""
-        self.assertEqual(OpenAi.get_name(), ModelName.OPENAI)
+        self.assertEqual(self.openai.get_name(), ModelName.OPENAI)
     
     def test_get_all_models(self):
         """Test get_all_models returns the correct models."""

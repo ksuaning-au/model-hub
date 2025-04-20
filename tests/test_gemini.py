@@ -50,7 +50,7 @@ class TestGemini(unittest.TestCase):
     
     def test_get_name(self):
         """Test get_name returns the correct model name."""
-        self.assertEqual(Gemini.get_name(), ModelName.GEMINI)
+        self.assertEqual(self.gemini.get_name(), ModelName.GEMINI)
     
     def test_get_all_models(self):
         """Test get_all_models returns the correct models."""
