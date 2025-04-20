@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="model_hub",
+    name="model-hub",
     version="0.1.0",
     description="A hub for managing machine learning models.",
     author="ksuaning-au",
